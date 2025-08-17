@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop the best deals on electronics, fashion, books, and more!">
+  <meta name="keywords" content="ecommerce, shopping, online store, PWA">
+  <meta name="theme-color" content="#1f2937">
+  <title>E-Shop - Your Online Store</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+  <!-- Sticky Navigation -->
+  <nav class="sticky top-0 bg-white dark:bg-gray-800 shadow-md z-50">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-gray-800 dark:text-white">E-Shop</a>
+      <div class="flex items-center space-x-4">
+        <input type="text" id="searchInput" placeholder="Search products..." class="p-2 rounded-md border dark:bg-gray-700 dark:text-white">
+        <button id="voiceSearch" class="p-2 bg-gray-200 dark:bg-gray-600 rounded-full"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5-3c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.47 6 6.93V22h2v-3.07c3.39-.46 6-3.4 6-6.93h-2z"></path></svg></button>
+        <a href="cart.html" class="relative"><svg class="w-6 h-6 text-gray-800 dark:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM17 18c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zm-8.1-5l2.36-6.07H15l2.36 6.07H8.9zm10.55-2.07c.66-1.66-.56-3.43-2.37-3.43H6.8c-1.81 0-3.03 1.77-2.37 3.43L6.9 12h10.2l2.45-6.07z"></path></svg><span id="cartCount" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-2">0</span></a>
+        <button id="themeToggle" class="p-2 bg-gray-200 dark:bg-gray-600 rounded-full"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 5a7 7 0 100 14 7 7 0 000-14z"></path></svg></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="relative bg-gray-200 h-64 flex items-center justify-center">
+    <img src="assets/images/images.jpeg" alt="Hero Banner" class="w-full h-full object-cover lazy-load">
+    <div class="absolute text-center text-white">
+      <h1 class="text-4xl font-bold">Shop the Best Deals!</h1>
+      <p class="text-lg">Up to 50% off on selected items</p>
+      <a href="#products" class="mt-4 inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="container mx-auto px-4 py-6">
+    <h2 class="text-2xl font-bold mb-4">Shop by Category</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="#books" class="bg-gray-200 dark:bg-gray-700 p-4 rounded text-center">Books</a>
+      <a href="#fashion" class="bg-gray-200 dark:bg-gray-700 p-4 rounded text-center">Fashion</a>
+      <a href="#electronics" class="bg-gray-200 dark:bg-gray-700 p-4 rounded text-center">Electronics</a>
+      <a href="#groceries" class="bg-gray-200 dark:bg-gray-700 p-4 rounded text-center">Groceries</a>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section id="products" class="container mx-auto px-4 py-6">
+    <h2 class="text-2xl font-bold mb-4">Featured Products</h2>
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Products populated by JS -->
+    </div>
+  </section>
+
+  <!-- Floating Buttons -->
+  <button id="goToTop" class="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hidden"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 5l-8 8h6v6h4v-6h6l-8-8z"></path></svg></button>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p>&copy; 2025 E-Shop. All rights reserved.</p>
+      <div class="flex justify-center space-x-4 mt-4">
+        <a href="cart.html">Cart</a>
+        <a href="wishlist.html">Wishlist</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Snackbar -->
+  <div id="snackbar" class="fixed bottom-4 left-4 bg-gray-800 text-white p-4 rounded hidden">
+    <span id="snackbarMessage"></span>
+    <button id="undoButton" class="ml-4 text-blue-400">Undo</button>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

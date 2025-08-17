@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product details for your favorite items">
+  <title>Product - E-Shop</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+  <!-- Navigation (same as index.html) -->
+  <nav class="sticky top-0 bg-white dark:bg-gray-800 shadow-md z-50">...</nav>
+
+  <!-- Product Details -->
+  <section class="container mx-auto px-4 py-6">
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Image Gallery -->
+      <div class="w-full md:w-1/2">
+        <img id="mainImage" src="assets/images/images.jpeg" alt="Product Image" class="w-full h-96 object-cover rounded lazy-load">
+        <div class="flex space-x-2 mt-2">
+          <img src="assets/images/images.jpeg" alt="Thumbnail 1" class="w-16 h-16 object-cover rounded cursor-pointer">
+          <img src="assets/images/images_2.jpeg" alt="Thumbnail 2" class="w-16 h-16 object-cover rounded cursor-pointer">
+          <img src="assets/images/images_3.jpeg" alt="Thumbnail 3" class="w-16 h-16 object-cover rounded cursor-pointer">
+        </div>
+        <div class="mt-4">
+          <iframe class="w-full h-64" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- Product Info -->
+      <div class="w-full md:w-1/2">
+        <h1 id="productTitle" class="text-3xl font-bold"></h1>
+        <div class="flex items-center mt-2">
+          <div id="starRating" class="flex">★★★★★</div>
+          <span class="ml-2 text-gray-600 dark:text-gray-300">(120 reviews)</span>
+        </div>
+        <p class="mt-2 text-2xl text-green-600"><span id="productPrice"></span> <span class="line-through text-gray-500" id="oldPrice"></span> <span class="text-red-500" id="discount"></span></p>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">Tags: <span id="productTags" class="font-semibold"></span></p>
+        <p class="mt-2 text-gray-600 dark:text-gray-300">Limited Stock! <span id="countdown" class="font-bold"></span></p>
+        <div class="mt-4">
+          <button id="addToCart" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Add to Cart</button>
+          <button id="buyNow" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 ml-2">Buy Now</button>
+          <button id="addToWishlist" class="ml-2 text-red-500"><svg class="w-6 h-6 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></button>
+        </div>
+        <button id="returnPolicy" class="mt-4 text-blue-600 underline">View Return Policy</button>
+        <!-- Reviews -->
+        <div class="mt-6">
+          <h3 class="text-xl font-bold">Customer Reviews</h3>
+          <div id="reviews" class="mt-4 space-y-4">
+            <!-- Reviews populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Return Policy Popup -->
+  <div id="returnPolicyPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-lg">
+      <h3 class="text-xl font-bold">Return Policy</h3>
+      <p class="mt-2">Returns accepted within 30 days of purchase. Items must be unused and in original packaging.</p>
+      <button id="closePopup" class="mt-4 bg-blue-600 text-white py-2 px-4 rounded">Close</button>
+    </div>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

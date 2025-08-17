@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login or register to shop">
+  <title>Login - E-Shop</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900">
+  <!-- Navigation (same as index.html) -->
+  <nav class="sticky top-0 bg-white dark:bg-gray-800 shadow-md z-50">...</nav>
+
+  <!-- Login/Register -->
+  <section class="container mx-auto px-4 py-6 flex justify-center">
+    <div class="w-full max-w-md bg-white dark:bg-gray-800 p-6 rounded shadow">
+      <h2 class="text-2xl font-bold mb-4">Login / Register</h2>
+      <form id="authForm">
+        <div class="mb-4">
+          <label for="username" class="block text-sm font-medium">Username</label>
+          <input type="text" id="username" class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white" required>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-medium">Password</label>
+          <input type="password" id="password" class="w-full p-2 border rounded dark:bg-gray-700 dark:text-white" required>
+        </div>
+        <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Submit</button>
+      </form>
+      <p class="mt-4 text-center">Don't have an account? <a href="#" id="toggleAuth" class="text-blue-600">Register</a></p>
+    </div>
+  </section>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
